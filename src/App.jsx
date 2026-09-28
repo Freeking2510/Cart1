@@ -1,13 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Volume2, VolumeX } from 'lucide-react';
-import ph from '../public/img/ph1.jpg'; // مسیر عکس 
+import ph1 from '../public/img/ph1.jpg'; // مسیر عکس 
+import ph2 from '../public/img/ph2.jpg'; // مسیر عکس 
 import Timer from './component/timer';
 import Map from './component/map';
 import User from './component/user';
 import Present from './component/Present';
 import './index.css';
-
+import Video from '../public/vid/gem.mp4';
+import music from '../public/audio/music.mp3'
 function App() {
   const [appState, setAppState] = useState('intro'); // 'intro', 'playing-video', 'main-site'
   const [isMuted, setIsMuted] = useState(false);
@@ -58,7 +60,7 @@ function App() {
         نکته کلیدی: تگ صدا را اینجا گذاشتیم تا همیشه در صفحه رندر شود 
         و رفرنس آن از بین نرود.
       */}
-      <audio ref={audioRef} src="/audio/music.mp3" loop />
+      <audio ref={audioRef} src={music} loop />
 
       {/* ----------- بخش اول: ویدیو و صفحه ورود ----------- */}
       {appState !== 'main-site' && (
@@ -68,7 +70,7 @@ function App() {
         >
           <video
             ref={videoRef}
-            src="/vid/gem.mp4"
+            src={Video}
             className={`w-full h-full object-cover transition-opacity duration-1000 ${appState === 'playing-video' ? 'opacity-100' : 'opacity-0'}`}
             onEnded={handleVideoEnd}
             playsInline
@@ -112,7 +114,7 @@ function App() {
           >
             <div className="relative w-full h-96">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white z-10" />
-              <img src={ph} alt="تصویر زمینه" className="w-full h-full object-cover" />
+              <img src={ph1} alt="تصویر زمینه" className="w-full h-full object-cover" />
             </div>
 
             <div className="px-6 relative z-20 flex flex-col items-center -mt-32">
@@ -122,7 +124,7 @@ function App() {
                 transition={{ delay: 0.5, duration: 0.8, type: "spring" }} 
                 className="w-40 h-40 rounded-full border-[6px] border-[#4a5d4e] overflow-hidden shadow-2xl relative bg-white p-1"
               >
-                <img src={ph} className="w-full h-full object-cover rounded-full" />
+                <img src={ph2} className="w-full h-full object-cover rounded-full" />
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1, duration: 0.8 }} className="w-full text-center mt-6">
