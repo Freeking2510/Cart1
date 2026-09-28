@@ -7,5 +7,4 @@ export default defineConfig({
     react(),
     tailwindcss(), // اضافه شد
   ],
-  base: '/Cart1/', // دقیقاً نام ریپازیتوری با دو اسلش
 })
