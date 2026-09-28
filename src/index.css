@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'MjFarsi';
+  src: url('/public/fonts/Mj_Farsi\ Simple\ Normal_0.ttf Simple Normal_0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: 'FarsiNastaliq';
+  src: url('/public/fonts/IranNastaliq.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'prasto';
+  src: url('/public/fonts//Parastoo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-mj: 'MjFarsi', sans-serif;
+  --font-nastaliq: 'FarsiNastaliq', serif;
+  --font-prasto: 'prasto', sans-serif;
+}
+
+body {
+  font-family: 'prasto', sans-serif;
+  background-color: #f4f1ea; /* رنگ کرمی مشابه پاکت نامه */
+  /* یک پترن ملایم برای حس بافت کاغذ */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  color: #2b3a32; /* رنگ سبز تیره برای نوشته‌ها */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.gold-foil-text {
+  background: linear-gradient(to right, #b49040, #dfc26a, #b49040);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
